@@ -3,7 +3,6 @@ package main
 import (
 	"context"
 	"fmt"
-	"log"
 	"net"
 	"os"
 	"os/exec"
@@ -19,7 +18,8 @@ type result struct {
 func main() {
 	args := os.Args
 	if len(args) != 2 {
-		log.Fatalln("usage: domainchecker <url>")
+		fmt.Println("usage: domainchecker <url>")
+		return
 	}
 	url := args[1]
 	if strings.Contains(url, "://") {
